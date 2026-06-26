@@ -101,44 +101,33 @@ export function HeroSection() {
           </h1>
         </div>
         
-        {/* Description */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end">
-          <p 
-            className={`text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+        {/* CTAs */}
+        <div 
+          className={`flex flex-col sm:flex-row justify-end gap-4 transition-all duration-700 delay-200 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <Button 
+            size="lg" 
+            className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
           >
-            Arealis builds AI infrastructure that transforms fragmented enterprise systems into explainable, traceable, and autonomous operations. Designed for regulated industries where intelligence must be trusted.
-          </p>
-          
-          {/* CTAs */}
-          <div 
-            className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+            Explore Zord
+            <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
           >
-            <Button 
-              size="lg" 
-              className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
-            >
-              Explore Zord
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
-            >
-              Request Demo
-            </Button>
-          </div>
+            Request Demo
+          </Button>
         </div>
         
       </div>
       
       {/* Stats marquee - full width outside container */}
       <div 
-        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${
+        className={`absolute bottom-12 left-0 right-0 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
