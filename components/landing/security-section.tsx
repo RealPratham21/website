@@ -3,30 +3,30 @@
 import { useEffect, useState, useRef } from "react";
 import { Shield, Lock, Eye, FileCheck } from "lucide-react";
 
-const securityFeatures = [
+const complianceFeatures = [
   {
     icon: Shield,
-    title: "SOC 2 Type II",
-    description: "Independently audited security controls with continuous monitoring.",
-  },
-  {
-    icon: Lock,
-    title: "End-to-end encryption",
-    description: "AES-256 encryption for data at rest and TLS 1.3 in transit.",
-  },
-  {
-    icon: Eye,
-    title: "Zero-trust architecture",
-    description: "Every request is authenticated and authorized. No exceptions.",
+    title: "Privacy by Design",
+    description: "Designed with data governance principles aligned with India's Digital Personal Data Protection Act (DPDP) and enterprise privacy requirements.",
   },
   {
     icon: FileCheck,
-    title: "GDPR & HIPAA",
-    description: "Full compliance with data protection and healthcare regulations.",
+    title: "Operational Auditability",
+    description: "Every payment event is preserved as an immutable operational history, enabling complete payment lineage, investigations and audit readiness.",
+  },
+  {
+    icon: Lock,
+    title: "Enterprise Security",
+    description: "AES-256 encryption at rest, TLS 1.3 encryption in transit, role-based access controls and secure operational governance built into the platform architecture.",
+  },
+  {
+    icon: Eye,
+    title: "Regulatory-Ready Infrastructure",
+    description: "Designed to integrate into enterprise environments operating under RBI guidance, ISO/IEC 27001 governance practices and modern financial compliance programs.",
   },
 ];
 
-const certifications = ["SOC 2", "ISO 27001", "HIPAA", "GDPR", "CCPA"];
+const complianceBadges = ["DPDP Ready", "ISO 27001 Aligned", "ISO 20022 Ready", "RBI-Aware", "Audit Ready", "Non-Custodial"];
 
 export function SecuritySection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,7 +45,7 @@ export function SecuritySection() {
   }, []);
 
   return (
-    <section id="security" ref={sectionRef} className="relative py-24 lg:py-32 bg-foreground/[0.02] overflow-hidden">
+    <section id="compliance" ref={sectionRef} className="relative py-24 lg:py-32 bg-foreground/[0.02] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left: Content */}
@@ -56,29 +56,30 @@ export function SecuritySection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Security
+              Enterprise Compliance
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Trust is
+              Compliance
               <br />
-              non-negotiable.
+              Without
+              <br />
+              Compromise.
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Enterprise-grade security isn&apos;t optional. It&apos;s built into every layer 
-              of our platform, from infrastructure to application.
+              Built for organizations operating in regulated environments where privacy, governance, auditability and operational accountability are business requirements—not optional features.
             </p>
 
-            {/* Certifications */}
+            {/* Compliance Badges */}
             <div className="flex flex-wrap gap-3">
-              {certifications.map((cert, index) => (
+              {complianceBadges.map((badge, index) => (
                 <span
-                  key={cert}
+                  key={badge}
                   className={`px-4 py-2 border border-foreground/10 text-sm font-mono transition-all duration-500 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${index * 50 + 200}ms` }}
                 >
-                  {cert}
+                  {badge}
                 </span>
               ))}
             </div>
@@ -86,7 +87,7 @@ export function SecuritySection() {
 
           {/* Right: Features */}
           <div className="grid gap-6">
-            {securityFeatures.map((feature, index) => (
+            {complianceFeatures.map((feature, index) => (
               <div
                 key={feature.title}
                 className={`p-6 border border-foreground/10 hover:border-foreground/20 transition-all duration-500 group ${
@@ -107,6 +108,11 @@ export function SecuritySection() {
                 </div>
               </div>
             ))}
+            
+            {/* Disclaimer */}
+            <p className="text-sm text-muted-foreground mt-4">
+              Designed to support enterprise governance, audit and regulatory workflows. Specific compliance obligations remain the responsibility of the deploying organization.
+            </p>
           </div>
         </div>
       </div>
