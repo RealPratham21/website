@@ -2,19 +2,19 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const integrations = [
-  { name: "GitHub", category: "Version Control" },
-  { name: "Slack", category: "Communication" },
-  { name: "Stripe", category: "Payments" },
-  { name: "PostgreSQL", category: "Database" },
-  { name: "Redis", category: "Cache" },
-  { name: "AWS", category: "Cloud" },
-  { name: "MongoDB", category: "Database" },
-  { name: "Vercel", category: "Hosting" },
-  { name: "Figma", category: "Design" },
-  { name: "Linear", category: "Project Management" },
-  { name: "Notion", category: "Documentation" },
-  { name: "OpenAI", category: "AI/ML" },
+const capabilities = [
+  { title: "Payment Traceability", subtitle: "End-to-end proof" },
+  { title: "Auto Reconciliation", subtitle: "Reduced manual effort" },
+  { title: "Dispute Resolution", subtitle: "Instant payment history" },
+  { title: "Compliance", subtitle: "Audit-ready evidence" },
+  { title: "Treasury Operations", subtitle: "Cash visibility" },
+  { title: "Payment Operations", subtitle: "Real-time observability" },
+  { title: "Enterprise Finance", subtitle: "Operational intelligence" },
+  { title: "Smart Data Lakes", subtitle: "Structured financial data" },
+  { title: "AI Orchestration", subtitle: "Action-oriented workflows" },
+  { title: "Banks & PSPs", subtitle: "Works with existing infrastructure" },
+  { title: "ERP Systems", subtitle: "SAP • Oracle • Tally" },
+  { title: "Audit Teams", subtitle: "Complete payment lineage" },
 ];
 
 export function IntegrationsSection() {
@@ -44,16 +44,16 @@ export function IntegrationsSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Integrations
+            Enterprise Capabilities
             <span className="w-8 h-px bg-foreground/30" />
           </span>
           <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6">
-            Works with everything
+            Built for
             <br />
-            you already use.
+            Modern Enterprise Finance.
           </h2>
           <p className="text-xl text-muted-foreground">
-            200+ pre-built integrations. Connect your entire stack in minutes.
+            Purpose-built for payment operations, finance teams, banks, PSPs and enterprise workflows where every payment must be traceable, auditable and operationally visible.
           </p>
         </div>
 
@@ -64,15 +64,15 @@ export function IntegrationsSection() {
         <div className="flex gap-6 marquee">
           {[...Array(2)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-6 shrink-0">
-              {integrations.map((integration) => (
+              {capabilities.map((capability) => (
                 <div
-                  key={`${integration.name}-${setIndex}`}
+                  key={`${capability.title}-${setIndex}`}
                   className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
                   <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
-                    {integration.name}
+                    {capability.title}
                   </div>
-                  <div className="text-sm text-muted-foreground">{integration.category}</div>
+                  <div className="text-sm text-muted-foreground">{capability.subtitle}</div>
                 </div>
               ))}
             </div>
@@ -85,15 +85,15 @@ export function IntegrationsSection() {
         <div className="flex gap-6 marquee-reverse">
           {[...Array(2)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-6 shrink-0">
-              {[...integrations].reverse().map((integration) => (
+              {[...capabilities].reverse().map((capability) => (
                 <div
-                  key={`${integration.name}-reverse-${setIndex}`}
+                  key={`${capability.title}-reverse-${setIndex}`}
                   className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
                   <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
-                    {integration.name}
+                    {capability.title}
                   </div>
-                  <div className="text-sm text-muted-foreground">{integration.category}</div>
+                  <div className="text-sm text-muted-foreground">{capability.subtitle}</div>
                 </div>
               ))}
             </div>
