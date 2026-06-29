@@ -29,6 +29,15 @@ const features = [
   },
 ];
 
+const aiOrbitNodes = [
+  { x: 150, y: 80 },
+  { x: 125, y: 123.301 },
+  { x: 75, y: 123.301 },
+  { x: 50, y: 80 },
+  { x: 75, y: 36.699 },
+  { x: 125, y: 36.699 },
+];
+
 function DeployVisual() {
   return (
     <svg viewBox="0 0 200 160" className="w-full h-full">
@@ -89,17 +98,15 @@ function AIVisual() {
       </circle>
       
       {/* Orbiting nodes */}
-      {[0, 1, 2, 3, 4, 5].map((i) => {
-        const angle = (i * 60) * (Math.PI / 180);
-        const radius = 50;
+      {aiOrbitNodes.map((node, i) => {
         return (
           <g key={i}>
             {/* Connection line */}
             <line
               x1="100"
               y1="80"
-              x2={100 + Math.cos(angle) * radius}
-              y2={80 + Math.sin(angle) * radius}
+              x2={node.x}
+              y2={node.y}
               stroke="currentColor"
               strokeWidth="1"
               opacity="0.3"
@@ -115,8 +122,8 @@ function AIVisual() {
             
             {/* Outer node */}
             <circle
-              cx={100 + Math.cos(angle) * radius}
-              cy={80 + Math.sin(angle) * radius}
+              cx={node.x}
+              cy={node.y}
               r="6"
               fill="none"
               stroke="currentColor"
@@ -314,9 +321,9 @@ export function FeaturesSection() {
 
   return (
     <section
-      id="features"
+      id="platform"
       ref={sectionRef}
-      className="relative py-24 lg:py-32"
+      className="relative py-24 lg:py-32 scroll-mt-24 bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(247,249,255,1)_40%,rgba(221,232,255,0.94)_74%,rgba(10,56,130,0.16)_100%)]"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}

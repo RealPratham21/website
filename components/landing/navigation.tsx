@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -44,7 +45,16 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="#" className="flex items-center gap-3 group">
+            <span className={`relative overflow-hidden rounded-md transition-all duration-500 ${isScrolled ? "w-8 h-8" : "w-10 h-10"}`}>
+              <Image
+                src="/arealis%20logo.jpg"
+                alt="Arealis logo"
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
+            </span>
             <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>Arealis</span>
             <span className={`text-muted-foreground font-mono transition-all duration-500 ${isScrolled ? "text-[10px] mt-0.5" : "text-xs mt-1"}`}>®</span>
           </a>

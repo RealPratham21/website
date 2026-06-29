@@ -6,6 +6,9 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
 
 const words = ["Operate", "Scale", "Orchestrate", "Transform"];
+const longestWord = words.reduce((longest, word) =>
+  word.length > longest.length ? word : longest
+);
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,7 +61,7 @@ export function HeroSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Left: Eyebrow and Headline */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-7">
             <div 
               className={`mb-8 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -78,17 +81,20 @@ export function HeroSection() {
                 }`}
               >
                 <span className="block">Infrastructure</span>
-                <span className="block">
+                <span className="block whitespace-nowrap">
                   to{" "}
-                  <span className="relative inline-block">
+                  <span className="relative inline-grid align-baseline">
+                    <span className="invisible">
+                      {longestWord}
+                    </span>
                     <span 
                       key={wordIndex}
-                      className="inline-flex"
+                      className="absolute inset-0 inline-flex text-sky-700 [text-shadow:0_0_18px_rgba(56,189,248,0.18)]"
                     >
                       {words[wordIndex].split("").map((char, i) => (
                         <span
                           key={`${wordIndex}-${i}`}
-                          className="inline-block animate-char-in"
+                          className="inline-block animate-char-in bg-gradient-to-r from-sky-700 via-cyan-600 to-blue-700 bg-clip-text text-transparent"
                           style={{
                             animationDelay: `${i * 50}ms`,
                           }}
@@ -97,7 +103,6 @@ export function HeroSection() {
                         </span>
                       ))}
                     </span>
-                    <span className="absolute -bottom-2 left-0 right-0 h-3 bg-foreground/10" />
                   </span>
                 </span>
               </h1>
@@ -105,7 +110,7 @@ export function HeroSection() {
           </div>
           
           {/* Right: CTAs */}
-          <div className="lg:col-span-6 flex flex-col justify-end">
+          <div className="lg:col-span-5 flex flex-col justify-end lg:items-end lg:pt-24">
             <div 
               className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -132,7 +137,7 @@ export function HeroSection() {
       </div>
       
       {/* White background section for stats */}
-      <div className="w-full bg-white mt-16 py-12">
+      <div className="w-full bg-white mt-40 lg:mt-52 py-12">
         {/* Stats marquee */}
         <div 
           className={`transition-all duration-700 delay-500 ${

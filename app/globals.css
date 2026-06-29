@@ -188,4 +188,87 @@
       linear-gradient(135deg, var(--foreground) 25%, transparent 25%, transparent 50%, var(--foreground) 50%, var(--foreground) 75%, transparent 75%) border-box;
     background-size: 100% 100%, 8px 8px;
   }
+
+  .team-carousel {
+    overflow: hidden;
+    width: 100%;
+    padding-block: 1.5rem;
+  }
+
+  .team-carousel-track {
+    display: flex;
+    width: max-content;
+    animation: team-marquee 42s linear infinite;
+    will-change: transform;
+  }
+
+  .team-carousel:hover .team-carousel-track {
+    animation-play-state: paused;
+  }
+
+  .team-carousel-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding-inline: 1.5rem;
+  }
+
+  .team-card {
+    flex: 0 0 auto;
+    width: min(18rem, 72vw);
+    aspect-ratio: 4 / 5;
+    perspective: 1400px;
+  }
+
+  .team-card-up {
+    margin-top: 0;
+  }
+
+  .team-card-down {
+    margin-top: 3.5rem;
+  }
+
+  .team-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .team-card:hover .team-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .team-card-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    backface-visibility: hidden;
+    border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.07);
+  }
+
+  .team-card-front {
+    background: var(--card);
+  }
+
+  .team-card-back {
+    transform: rotateY(180deg);
+    background:
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.96), transparent 52%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent 40%),
+      var(--background);
+  }
+
+  @keyframes team-marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }

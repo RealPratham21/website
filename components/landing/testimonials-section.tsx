@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Users, Award, Building2, Zap, Cloud } from "lucide-react";
 
 const recognitions = [
@@ -12,6 +13,8 @@ const recognitions = [
     organization: "Jay Shah Consultancy",
     initiative: "ForesightFlow Retail AI Platform",
     note: "Research supported by comparative studies from MIT Sloan and London Business School.",
+    image: "/ff.png",
+    imageAlt: "ForesightFlow recognition visual",
   },
   {
     headline: "Recognized among 53,000+ teams at Google's Agentic AI Hackathon 2025 for building a city-scale agentic AI orchestration platform.",
@@ -21,6 +24,8 @@ const recognitions = [
     organization: "Google Agentic AI Hackathon 2025",
     initiative: "National Recognition",
     note: "",
+    image: "/google%20hackthon.jpeg",
+    imageAlt: "Google Agentic AI Hackathon recognition visual",
   },
   {
     headline: "Selected among India's leading applied AI innovations at IIT Bombay's National Showcase during E-Summit.",
@@ -30,6 +35,8 @@ const recognitions = [
     organization: "IIT Bombay",
     initiative: "Applied AI Innovation",
     note: "",
+    image: "/iit-bombay-showcase.png",
+    imageAlt: "IIT Bombay showcase recognition visual",
   },
   {
     headline: "Chosen as a high-potential AI startup through the Wadhwani Foundation Liftoff Program.",
@@ -39,6 +46,8 @@ const recognitions = [
     organization: "Wadhwani Foundation",
     initiative: "Enterprise Innovation",
     note: "",
+    image: "/wadhwani_Foundation.png",
+    imageAlt: "Wadhwani Foundation recognition visual",
   },
   {
     headline: "Supported by AWS Founders Hub and Microsoft for Startups to build secure, scalable enterprise infrastructure.",
@@ -48,6 +57,8 @@ const recognitions = [
     organization: "AWS Founders Hub",
     initiative: "Microsoft for Startups",
     note: "",
+    image: "/microsoft%20hub.png",
+    imageAlt: "Microsoft for Startups and AWS Founders Hub recognition visual",
   },
 ];
 
@@ -70,7 +81,34 @@ export function TestimonialsSection() {
   const IconComponent = activeRecognition.icon;
 
   return (
-    <section className="relative py-32 lg:py-40 border-t border-foreground/10 lg:pb-14">
+    <section id="about" className="relative py-32 lg:py-40 border-t border-foreground/10 lg:pb-14 scroll-mt-24">
+      {/* Recognition Partners Label */}
+      <div className="mb-20">
+        <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
+          Supported by leading organizations
+        </p>
+
+        {/* Full-width marquee outside container */}
+        <div className="w-full">
+          <div className="flex gap-16 items-center marquee">
+            {[...Array(2)].map((_, setIdx) => (
+              <div key={setIdx} className="flex gap-16 items-center shrink-0">
+                {["Google", "IIT Bombay", "Wadhwani Foundation", "AWS", "Microsoft", "MIT Sloan", "London Business School", "Jay Shah"].map(
+                  (org) => (
+                    <span
+                      key={`${setIdx}-${org}`}
+                      className="font-display text-xl md:text-2xl text-foreground/30 whitespace-nowrap hover:text-foreground transition-colors duration-300"
+                    >
+                      {org}
+                    </span>
+                  )
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
@@ -114,22 +152,24 @@ export function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Metric Highlight */}
+          {/* Recognition Image */}
           <div className="lg:col-span-4 flex flex-col justify-center">
             <div
-              className={`p-8 border border-foreground/10 transition-all duration-300 ${
+              className={`relative aspect-[4/3] overflow-hidden border border-foreground/10 bg-gradient-to-br from-white to-foreground/[0.03] transition-all duration-300 ${
                 isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
               }`}
             >
-              <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase block mb-4">
-                Recognition
-              </span>
-              <p className="font-display text-3xl md:text-4xl text-foreground mb-2">
-                {activeRecognition.metric}
-              </p>
-              <p className="text-muted-foreground text-sm">
-                {activeRecognition.metricLabel}
-              </p>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),transparent_55%)] pointer-events-none" />
+              <div className="relative h-full w-full p-6">
+                <Image
+                  key={activeRecognition.image}
+                  src={activeRecognition.image}
+                  alt={activeRecognition.imageAlt}
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 1024px) 28rem, 100vw"
+                />
+              </div>
             </div>
 
             {/* Navigation Dots */}
@@ -166,32 +206,6 @@ export function TestimonialsSection() {
           </div>
         )}
 
-        {/* Recognition Partners Label */}
-        <div className="mt-24 pt-12 border-t border-foreground/10">
-          <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
-            Supported by leading organizations
-          </p>
-        </div>
-      </div>
-      
-      {/* Full-width marquee outside container */}
-      <div className="w-full">
-        <div className="flex gap-16 items-center marquee">
-          {[...Array(2)].map((_, setIdx) => (
-            <div key={setIdx} className="flex gap-16 items-center shrink-0">
-              {["Google", "IIT Bombay", "Wadhwani Foundation", "AWS", "Microsoft", "MIT Sloan", "London Business School", "Jay Shah"].map(
-                (org) => (
-                  <span
-                    key={`${setIdx}-${org}`}
-                    className="font-display text-xl md:text-2xl text-foreground/30 whitespace-nowrap hover:text-foreground transition-colors duration-300"
-                  >
-                    {org}
-                  </span>
-                )
-              )}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

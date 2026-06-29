@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   title: 'Arealis - AI Infrastructure for Regulated Enterprises',
   description: 'Arealis builds AI infrastructure that transforms fragmented enterprise systems into explainable, traceable, and autonomous operations.',
   generator: 'v0.app',
+  icons: {
+    icon: '/arealis%20logo.jpg',
+    shortcut: '/arealis%20logo.jpg',
+    apple: '/arealis%20logo.jpg',
+  },
 }
 
 export default function RootLayout({

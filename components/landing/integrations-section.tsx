@@ -34,7 +34,11 @@ export function IntegrationsSection() {
   }, []);
 
   return (
-    <section id="integrations" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section
+      id="solutions"
+      ref={sectionRef}
+      className="relative py-24 lg:py-32 overflow-hidden scroll-mt-24 bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(247,249,255,1)_38%,rgba(220,231,255,0.96)_72%,rgba(10,56,130,0.18)_100%)]"
+    >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div

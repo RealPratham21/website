@@ -6,6 +6,7 @@ import { InfrastructureSection } from "@/components/landing/infrastructure-secti
 import { IntegrationsSection } from "@/components/landing/integrations-section";
 import { SecuritySection } from "@/components/landing/security-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { TeamSection } from "@/components/landing/team-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <IntegrationsSection />
       <SecuritySection />
       <TestimonialsSection />
+      <TeamSection />
       <CtaSection />
       <FooterSection />
     </main>
