@@ -31,10 +31,11 @@ export function CtaSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(231,242,255,0.92)_100%)]">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-[linear-gradient(135deg,rgba(2,10,24,1)_0%,rgba(7,24,48,0.98)_50%,rgba(18,80,148,0.92)_100%)] text-white">
+      <div className="absolute inset-0 fintech-grid opacity-20 pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
-          className={`relative border border-primary/20 bg-white/72 shadow-[0_28px_90px_rgba(15,71,150,0.12)] backdrop-blur transition-all duration-1000 ${
+          className={`relative border border-cyan-100/22 bg-white/[0.06] shadow-[0_34px_110px_rgba(0,0,0,0.32)] backdrop-blur transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           onMouseMove={handleMouseMove}
@@ -57,14 +58,14 @@ export function CtaSection() {
                   Give It Intelligence.
                 </h2>
 
-                <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
+                <p className="text-xl text-cyan-100/64 mb-12 leading-relaxed max-w-xl">
                   Connect existing systems, orchestrate AI agents, and build a complete operational layer without replacing your current infrastructure.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-4">
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-14 text-base rounded-full group shadow-[0_16px_40px_rgba(47,91,255,0.22)]"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-14 text-base rounded-full group shadow-[0_18px_48px_rgba(47,91,255,0.42)]"
                   >
                     Book Demo
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -80,8 +81,8 @@ export function CtaSection() {
           </div>
 
           {/* Decorative corner */}
-          <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-primary/10" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-primary/10" />
+          <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-cyan-100/18" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-cyan-100/18" />
         </div>
       </div>
     </section>

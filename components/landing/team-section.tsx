@@ -61,8 +61,9 @@ const teamMembers = [
 
 export function TeamSection() {
   return (
-    <section className="relative py-28 lg:py-36 border-t border-primary/10 bg-[linear-gradient(180deg,rgba(241,248,255,0.9)_0%,rgba(255,255,255,0.96)_100%)] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-14 lg:mb-16">
+    <section className="relative py-28 lg:py-36 border-t border-primary/20 bg-[linear-gradient(180deg,rgba(204,228,255,0.95)_0%,rgba(236,247,255,0.9)_55%,rgba(165,211,255,0.72)_100%)] overflow-hidden">
+      <div className="absolute inset-0 fintech-grid opacity-25 pointer-events-none" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 mb-14 lg:mb-16">
         <div className="flex items-center gap-4 mb-8">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
             Meet The Team

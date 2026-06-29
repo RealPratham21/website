@@ -37,8 +37,9 @@ export function IntegrationsSection() {
     <section
       id="solutions"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden scroll-mt-24 bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(239,247,255,0.96)_36%,rgba(214,231,255,0.92)_72%,rgba(47,91,255,0.16)_100%)]"
+      className="relative py-24 lg:py-32 overflow-hidden scroll-mt-24 bg-[linear-gradient(180deg,rgba(12,54,106,0.12)_0%,rgba(181,216,255,0.98)_36%,rgba(99,166,255,0.38)_72%,rgba(5,26,54,0.18)_100%)]"
     >
+      <div className="absolute inset-0 fintech-grid opacity-35 pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
@@ -71,7 +72,7 @@ export function IntegrationsSection() {
               {capabilities.map((capability) => (
                 <div
                   key={`${capability.title}-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-primary/10 bg-white/55 hover:border-primary/30 hover:bg-white/90 transition-all duration-300 group shadow-[0_14px_40px_rgba(15,71,150,0.06)]"
+                  className="shrink-0 fintech-card px-8 py-6 border hover:border-primary/50 hover:bg-white/95 transition-all duration-300 group"
                 >
                   <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
                     {capability.title}
@@ -92,7 +93,7 @@ export function IntegrationsSection() {
               {[...capabilities].reverse().map((capability) => (
                 <div
                   key={`${capability.title}-reverse-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-primary/10 bg-white/55 hover:border-primary/30 hover:bg-white/90 transition-all duration-300 group shadow-[0_14px_40px_rgba(15,71,150,0.06)]"
+                  className="shrink-0 fintech-card px-8 py-6 border hover:border-primary/50 hover:bg-white/95 transition-all duration-300 group"
                 >
                   <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
                     {capability.title}

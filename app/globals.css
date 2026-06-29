@@ -4,28 +4,28 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.985 0.012 248);
-  --foreground: oklch(0.19 0.055 254);
-  --card: oklch(0.995 0.006 248);
-  --card-foreground: oklch(0.19 0.055 254);
-  --popover: oklch(0.995 0.006 248);
-  --popover-foreground: oklch(0.19 0.055 254);
-  --primary: oklch(0.56 0.22 263);
+  --background: oklch(0.945 0.035 246);
+  --foreground: oklch(0.18 0.075 253);
+  --card: oklch(0.975 0.025 244);
+  --card-foreground: oklch(0.18 0.075 253);
+  --popover: oklch(0.975 0.025 244);
+  --popover-foreground: oklch(0.18 0.075 253);
+  --primary: oklch(0.55 0.255 263);
   --primary-foreground: oklch(0.99 0.004 250);
-  --secondary: oklch(0.945 0.025 248);
-  --secondary-foreground: oklch(0.22 0.06 254);
-  --muted: oklch(0.93 0.018 248);
-  --muted-foreground: oklch(0.45 0.04 252);
-  --accent: oklch(0.9 0.042 232);
-  --accent-foreground: oklch(0.19 0.055 254);
+  --secondary: oklch(0.885 0.052 236);
+  --secondary-foreground: oklch(0.19 0.075 253);
+  --muted: oklch(0.875 0.042 242);
+  --muted-foreground: oklch(0.39 0.065 252);
+  --accent: oklch(0.77 0.145 207);
+  --accent-foreground: oklch(0.14 0.065 252);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.86 0.025 248);
-  --input: oklch(0.9 0.025 248);
-  --ring: oklch(0.56 0.22 263);
-  --chart-1: oklch(0.56 0.22 263);
-  --chart-2: oklch(0.62 0.17 225);
-  --chart-3: oklch(0.48 0.11 185);
+  --border: oklch(0.76 0.055 244);
+  --input: oklch(0.82 0.04 244);
+  --ring: oklch(0.55 0.255 263);
+  --chart-1: oklch(0.55 0.255 263);
+  --chart-2: oklch(0.72 0.155 205);
+  --chart-3: oklch(0.62 0.15 175);
   --chart-4: oklch(0.72 0.11 85);
   --chart-5: oklch(0.35 0.07 255);
   --radius: 0.25rem;
@@ -88,8 +88,9 @@
   body {
     @apply bg-background text-foreground;
     background:
-      radial-gradient(circle at top left, rgba(47, 91, 255, 0.07), transparent 30rem),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(240, 247, 255, 0.92));
+      radial-gradient(circle at 8% 0%, rgba(47, 91, 255, 0.2), transparent 26rem),
+      radial-gradient(circle at 92% 14%, rgba(8, 190, 190, 0.15), transparent 28rem),
+      linear-gradient(180deg, rgba(232, 243, 255, 0.98), rgba(212, 230, 255, 0.92));
   }
   html {
     scroll-behavior: smooth;
@@ -192,6 +193,40 @@
     background-size: 100% 100%, 8px 8px;
   }
 
+  .fintech-grid {
+    background-image:
+      linear-gradient(rgba(47, 91, 255, 0.11) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(47, 91, 255, 0.11) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .fintech-dot-mesh {
+    background-image: radial-gradient(circle, rgba(47, 91, 255, 0.2) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .fintech-navy-surface {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(47, 91, 255, 0.36), transparent 34rem),
+      radial-gradient(circle at 86% 10%, rgba(10, 210, 196, 0.22), transparent 30rem),
+      linear-gradient(135deg, #061224 0%, #071a35 46%, #0a2b52 100%);
+  }
+
+  .fintech-card {
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(219, 235, 255, 0.78));
+    border-color: rgba(47, 91, 255, 0.26);
+    box-shadow: 0 24px 70px rgba(15, 71, 150, 0.16);
+  }
+
+  .fintech-card-dark {
+    background:
+      radial-gradient(circle at top right, rgba(47, 91, 255, 0.25), transparent 45%),
+      linear-gradient(145deg, rgba(7, 20, 38, 0.98), rgba(9, 36, 70, 0.96));
+    border-color: rgba(120, 190, 255, 0.22);
+    box-shadow: 0 28px 90px rgba(3, 15, 36, 0.28);
+  }
+
   .team-carousel {
     overflow: hidden;
     width: 100%;
@@ -250,7 +285,7 @@
     backface-visibility: hidden;
     border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent);
     border-radius: 1.5rem;
-    box-shadow: 0 18px 48px rgba(15, 71, 150, 0.11);
+    box-shadow: 0 22px 62px rgba(15, 71, 150, 0.2);
   }
 
   .team-card-front {
@@ -260,8 +295,8 @@
   .team-card-back {
     transform: rotateY(180deg);
     background:
-      radial-gradient(circle at top, rgba(232, 242, 255, 0.96), transparent 52%),
-      linear-gradient(180deg, rgba(47, 91, 255, 0.05), transparent 42%),
+      radial-gradient(circle at top, rgba(194, 226, 255, 0.96), transparent 52%),
+      linear-gradient(180deg, rgba(47, 91, 255, 0.16), transparent 42%),
       var(--background);
   }
 

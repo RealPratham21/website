@@ -68,9 +68,9 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative overflow-hidden border border-white/10 bg-[#071426]/95 p-6 text-white shadow-[0_28px_90px_rgba(15,71,150,0.22)] sm:p-8 lg:p-10"
+      className="relative overflow-hidden border border-cyan-100/20 bg-[#071426]/95 p-6 text-white shadow-[0_34px_110px_rgba(3,15,36,0.34)] sm:p-8 lg:p-10"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(45,112,255,0.24),transparent_36%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(45,112,255,0.42),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(8,190,190,0.18),transparent_42%),linear-gradient(135deg,rgba(255,255,255,0.1),transparent_30%)]" />
 
       <div className="relative grid gap-8 md:grid-cols-2">
         <label className="grid gap-3">
@@ -132,7 +132,7 @@ export function ContactForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="h-14 rounded-full bg-[#2f5bff] px-8 text-base text-white hover:bg-[#244be0]"
+            className="h-14 rounded-full bg-[#2f5bff] px-8 text-base text-white shadow-[0_18px_48px_rgba(47,91,255,0.42)] hover:bg-[#244be0]"
         >
           {isSubmitting ? (
             <>

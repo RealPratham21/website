@@ -37,7 +37,7 @@ const socialLinks = [
 
 export function FooterSection() {
   return (
-    <footer className="relative border-t border-primary/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(235,245,255,0.92)_100%)]">
+    <footer className="relative border-t border-primary/20 bg-[linear-gradient(180deg,rgba(205,228,255,0.92)_0%,rgba(237,247,255,0.92)_100%)]">
       {/* Animated wave background */}
       <div className="absolute inset-0 h-64 opacity-20 pointer-events-none overflow-hidden">
         <AnimatedWave />

@@ -26,18 +26,20 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pb-32 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(238,247,255,0.9)_68%,rgba(255,255,255,0.96)_100%)]">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pb-32 bg-[linear-gradient(135deg,rgba(218,235,255,1)_0%,rgba(242,249,255,0.95)_38%,rgba(191,220,255,0.92)_72%,rgba(118,179,255,0.72)_100%)]">
+      <div className="absolute inset-0 fintech-grid opacity-55 pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(circle_at_15%_10%,rgba(47,91,255,0.24),transparent_38%),radial-gradient(circle_at_85%_15%,rgba(8,190,190,0.22),transparent_34%)] pointer-events-none" />
       {/* Animated sphere background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-40 pointer-events-none">
         <AnimatedSphere />
       </div>
       
       {/* Subtle grid lines */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-45">
         {[...Array(8)].map((_, i) => (
           <div
             key={`h-${i}`}
-            className="absolute h-px bg-foreground/10"
+            className="absolute h-px bg-primary/16"
             style={{
               top: `${12.5 * (i + 1)}%`,
               left: 0,
@@ -48,7 +50,7 @@ export function HeroSection() {
         {[...Array(12)].map((_, i) => (
           <div
             key={`v-${i}`}
-            className="absolute w-px bg-foreground/10"
+            className="absolute w-px bg-primary/16"
             style={{
               left: `${8.33 * (i + 1)}%`,
               top: 0,
@@ -137,7 +139,7 @@ export function HeroSection() {
       </div>
       
       {/* White background section for stats */}
-      <div className="w-full bg-white/70 mt-40 lg:mt-52 py-12 backdrop-blur">
+      <div className="w-full bg-[#061224] text-white mt-40 lg:mt-52 py-12 shadow-[0_-22px_70px_rgba(15,71,150,0.16)]">
         {/* Stats marquee */}
         <div 
           className={`transition-all duration-700 delay-500 ${
@@ -155,9 +157,9 @@ export function HeroSection() {
                 ].map((stat) => (
                   <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
                     <span className="text-4xl lg:text-5xl font-display">{stat.value}</span>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm text-white/62">
                       {stat.label}
-                      <span className="block font-mono text-xs mt-1">{stat.company}</span>
+                      <span className="block font-mono text-xs mt-1 text-cyan-200/70">{stat.company}</span>
                     </span>
                   </div>
                 ))}

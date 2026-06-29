@@ -38,7 +38,8 @@ export function InfrastructureSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(239,247,255,0.88)_100%)]">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-[linear-gradient(135deg,rgba(7,20,38,1)_0%,rgba(8,32,63,0.98)_48%,rgba(20,89,160,0.92)_100%)] text-white">
+      <div className="absolute inset-0 fintech-grid opacity-20 pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
@@ -47,8 +48,8 @@ export function InfrastructureSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-foreground/30" />
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-cyan-100/65 mb-6">
+              <span className="w-8 h-px bg-cyan-200/45" />
               Enterprise Integration
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
@@ -58,23 +59,23 @@ export function InfrastructureSection() {
               <br />
               Prove.
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-12">
+            <p className="text-xl text-white/64 leading-relaxed mb-12">
               Zord integrates with the financial systems you already operate, continuously observing every payment event to generate complete financial proof without changing existing workflows.
             </p>
 
             {/* Enterprise Capabilities */}
             <div className="grid grid-cols-3 gap-8">
               <div>
-                <div className="text-sm font-mono text-foreground mb-2">Non-Custodial</div>
-                <div className="text-xs text-muted-foreground">Architecture</div>
+                <div className="text-sm font-mono text-white mb-2">Non-Custodial</div>
+                <div className="text-xs text-cyan-100/60">Architecture</div>
               </div>
               <div>
-                <div className="text-sm font-mono text-foreground mb-2">Real-Time</div>
-                <div className="text-xs text-muted-foreground">Visibility</div>
+                <div className="text-sm font-mono text-white mb-2">Real-Time</div>
+                <div className="text-xs text-cyan-100/60">Visibility</div>
               </div>
               <div>
-                <div className="text-sm font-mono text-foreground mb-2">Financial</div>
-                <div className="text-xs text-muted-foreground">Proof</div>
+                <div className="text-sm font-mono text-white mb-2">Financial</div>
+                <div className="text-xs text-cyan-100/60">Proof</div>
               </div>
             </div>
           </div>
@@ -85,10 +86,10 @@ export function InfrastructureSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
-            <div className="border border-primary/10 bg-white/72 shadow-[0_24px_80px_rgba(15,71,150,0.08)] backdrop-blur">
+            <div className="fintech-card-dark border">
               {/* Header */}
               <div className="px-6 py-4 border-b border-foreground/10 flex items-center justify-between">
-                <span className="text-sm font-mono text-muted-foreground">Enterprise Connections</span>
+                <span className="text-sm font-mono text-cyan-100/65">Enterprise Connections</span>
                 <span className="flex items-center gap-2 text-xs font-mono text-emerald-600">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   All Connected
@@ -101,7 +102,7 @@ export function InfrastructureSection() {
                   <div
                     key={integration.name}
                     className={`px-6 py-5 border-b border-foreground/5 last:border-b-0 flex items-center justify-between transition-all duration-300 ${
-                      activeIntegration === index ? "bg-foreground/[0.02]" : ""
+                      activeIntegration === index ? "bg-white/[0.08]" : ""
                     }`}
                   >
                     <div className="flex items-center gap-4">
@@ -112,7 +113,7 @@ export function InfrastructureSection() {
                       />
                       <div className="font-medium text-sm">{integration.name}</div>
                     </div>
-                    <span className="font-mono text-xs text-muted-foreground">{integration.status}</span>
+                    <span className="font-mono text-xs text-cyan-100/55">{integration.status}</span>
                   </div>
                 ))}
               </div>

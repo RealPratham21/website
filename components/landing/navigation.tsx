@@ -44,7 +44,7 @@ export function Navigation() {
       <nav 
         className={`mx-auto transition-all duration-500 ${
           isScrolled || isMobileMenuOpen
-            ? "bg-background/80 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]"
+            ? "bg-white/86 backdrop-blur-xl border border-primary/20 rounded-2xl shadow-[0_18px_60px_rgba(15,71,150,0.18)] max-w-[1200px]"
             : "bg-transparent max-w-[1400px]"
         }`}
       >
@@ -95,7 +95,7 @@ export function Navigation() {
             <Button
               asChild
               size="sm"
-              className={`bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
+                className={`bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-[0_12px_34px_rgba(47,91,255,0.28)] transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
             >
               <Link href="/contact">Book Demo</Link>
             </Button>

@@ -274,7 +274,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 lg:py-20 border-b border-foreground/10">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 lg:py-20 border-b border-primary/20 bg-white/45 px-6 shadow-[0_18px_50px_rgba(15,71,150,0.08)] backdrop-blur transition-colors duration-500 group-hover:bg-white/70 lg:px-8">
         {/* Number */}
         <div className="shrink-0">
           <span className="font-mono text-sm text-muted-foreground">{feature.number}</span>
@@ -323,8 +323,9 @@ export function FeaturesSection() {
     <section
       id="platform"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 scroll-mt-24 bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(236,246,255,0.96)_42%,rgba(214,231,255,0.9)_78%,rgba(47,91,255,0.14)_100%)]"
+      className="relative py-24 lg:py-32 scroll-mt-24 bg-[linear-gradient(180deg,rgba(207,229,255,1)_0%,rgba(168,207,255,0.92)_48%,rgba(73,134,255,0.28)_100%)]"
     >
+      <div className="absolute inset-0 fintech-dot-mesh opacity-40 pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-16 lg:mb-24">

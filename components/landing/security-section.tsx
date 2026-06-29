@@ -45,7 +45,8 @@ export function SecuritySection() {
   }, []);
 
   return (
-    <section id="compliance" ref={sectionRef} className="relative py-24 lg:py-32 bg-[linear-gradient(180deg,rgba(239,247,255,0.82)_0%,rgba(255,255,255,0.96)_100%)] overflow-hidden">
+    <section id="compliance" ref={sectionRef} className="relative py-24 lg:py-32 bg-[linear-gradient(135deg,rgba(207,229,255,0.98)_0%,rgba(235,247,255,0.92)_48%,rgba(129,199,255,0.4)_100%)] overflow-hidden">
+      <div className="absolute inset-0 fintech-dot-mesh opacity-35 pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left: Content */}
@@ -74,7 +75,7 @@ export function SecuritySection() {
               {complianceBadges.map((badge, index) => (
                 <span
                   key={badge}
-                  className={`px-4 py-2 border border-primary/10 bg-white/65 text-sm font-mono shadow-[0_10px_30px_rgba(15,71,150,0.05)] transition-all duration-500 ${
+                  className={`px-4 py-2 border border-primary/25 bg-white/80 text-sm font-mono shadow-[0_16px_42px_rgba(15,71,150,0.12)] transition-all duration-500 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${index * 50 + 200}ms` }}
@@ -90,7 +91,7 @@ export function SecuritySection() {
             {complianceFeatures.map((feature, index) => (
               <div
                 key={feature.title}
-                className={`p-6 border border-primary/10 bg-white/72 shadow-[0_16px_52px_rgba(15,71,150,0.07)] hover:border-primary/25 transition-all duration-500 group ${
+                className={`p-6 fintech-card border hover:border-primary/45 transition-all duration-500 group ${
                   isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

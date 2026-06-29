@@ -73,7 +73,7 @@ export function HowItWorksSection() {
     <section
       id="zord"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-[#071426] text-background overflow-hidden scroll-mt-24"
+      className="relative py-24 lg:py-32 fintech-navy-surface text-background overflow-hidden scroll-mt-24"
     >
       {/* Diagonal lines pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -148,7 +148,7 @@ export function HowItWorksSection() {
 
           {/* Timeline display */}
           <div className="lg:sticky lg:top-32 self-start">
-            <div className="border border-background/10 overflow-hidden">
+            <div className="fintech-card-dark border overflow-hidden">
               {/* Window header */}
               <div className="px-6 py-4 border-b border-background/10 flex items-center justify-between">
                 <div className="flex gap-2">

@@ -42,9 +42,10 @@ export default function ContactPage() {
       <Navigation />
 
       <section className="relative overflow-hidden pt-32 lg:pt-40">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(236,246,255,0.86)_0%,rgba(255,255,255,0.98)_45%,rgba(232,241,255,0.92)_100%)]" />
-        <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_50%_0%,rgba(47,91,255,0.18),transparent_48%)]" />
-        <div className="absolute inset-x-0 top-28 h-56 bg-[radial-gradient(circle,rgba(14,165,233,0.08)_1px,transparent_1px)] [background-size:24px_24px] opacity-70" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(204,228,255,1)_0%,rgba(237,247,255,0.96)_42%,rgba(118,179,255,0.72)_100%)]" />
+        <div className="absolute inset-0 fintech-grid opacity-45" />
+        <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_22%_0%,rgba(47,91,255,0.28),transparent_46%),radial-gradient(circle_at_82%_12%,rgba(8,190,190,0.22),transparent_38%)]" />
+        <div className="absolute inset-x-0 top-28 h-56 bg-[radial-gradient(circle,rgba(14,165,233,0.18)_1px,transparent_1px)] [background-size:24px_24px] opacity-70" />
 
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 pb-24 lg:px-12 lg:pb-32">
           <div className="mx-auto max-w-4xl text-center">
@@ -68,14 +69,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-primary/10 bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(236,244,255,0.94)_100%)] py-24 lg:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(47,91,255,0.12),transparent_36%),radial-gradient(circle_at_82%_100%,rgba(14,165,233,0.11),transparent_34%)]" />
+      <section className="relative overflow-hidden border-y border-primary/20 bg-[linear-gradient(180deg,rgba(7,20,38,0.98)_0%,rgba(8,32,63,0.96)_48%,rgba(18,80,148,0.9)_100%)] py-24 text-white lg:py-32">
+        <div className="absolute inset-0 fintech-grid opacity-20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(47,91,255,0.34),transparent_36%),radial-gradient(circle_at_82%_100%,rgba(14,165,233,0.2),transparent_34%)]" />
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 lg:px-12">
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <h2 className="font-display text-4xl tracking-tight md:text-6xl">
               Contact
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-cyan-100/66">
               Reach out, Connect, and Start your Path to home
             </p>
           </div>
@@ -84,17 +86,17 @@ export default function ContactPage() {
             {contactCards.map((card) => (
               <article
                 key={card.title}
-                className="group min-h-64 border border-primary/10 bg-white/78 p-8 shadow-[0_18px_60px_rgba(15,71,150,0.08)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_24px_70px_rgba(47,91,255,0.14)]"
+                className="group min-h-64 border border-cyan-100/20 bg-white/[0.08] p-8 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-cyan-100/45 hover:bg-white/[0.12]"
               >
                 <div className="mb-8 flex items-center gap-4">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-cyan-200/14 text-cyan-100 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                     <card.icon className="h-5 w-5" />
                   </span>
-                  <h3 className="text-2xl font-semibold tracking-tight text-primary">
+                  <h3 className="text-2xl font-semibold tracking-tight text-cyan-100">
                     {card.title}
                   </h3>
                 </div>
-                <div className="space-y-3 text-base font-medium leading-relaxed text-foreground/78">
+                <div className="space-y-3 text-base font-medium leading-relaxed text-white/74">
                   {card.details.map((detail) => (
                     <p key={detail}>{detail}</p>
                   ))}

@@ -81,10 +81,10 @@ export function TestimonialsSection() {
   const IconComponent = activeRecognition.icon;
 
   return (
-    <section id="about" className="relative py-32 lg:py-40 border-t border-primary/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(241,248,255,0.9)_100%)] lg:pb-14 scroll-mt-24">
+    <section id="about" className="relative py-32 lg:py-40 border-t border-cyan-200/20 fintech-navy-surface text-white lg:pb-14 scroll-mt-24">
       {/* Recognition Partners Label */}
       <div className="mb-20">
-        <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
+        <p className="font-mono text-xs tracking-widest text-cyan-100/58 uppercase mb-8 text-center">
           Supported by leading organizations
         </p>
 
@@ -97,7 +97,7 @@ export function TestimonialsSection() {
                   (org) => (
                     <span
                       key={`${setIdx}-${org}`}
-                      className="font-display text-xl md:text-2xl text-foreground/30 whitespace-nowrap hover:text-foreground transition-colors duration-300"
+                      className="font-display text-xl md:text-2xl text-white/30 whitespace-nowrap hover:text-white transition-colors duration-300"
                     >
                       {org}
                     </span>
@@ -112,11 +112,11 @@ export function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
-          <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+          <span className="font-mono text-xs tracking-widest text-cyan-100/58 uppercase">
             Trusted & Recognized
           </span>
-          <div className="flex-1 h-px bg-foreground/10" />
-          <span className="font-mono text-xs text-muted-foreground">
+          <div className="flex-1 h-px bg-cyan-100/18" />
+          <span className="font-mono text-xs text-cyan-100/58">
             {String(activeIndex + 1).padStart(2, "0")} / {String(recognitions.length).padStart(2, "0")}
           </span>
         </div>
@@ -129,7 +129,7 @@ export function TestimonialsSection() {
                 isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
               }`}
             >
-              <p className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-foreground">
+              <p className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-white">
                 {activeRecognition.headline}
               </p>
             </div>
@@ -140,12 +140,12 @@ export function TestimonialsSection() {
                 isAnimating ? "opacity-0" : "opacity-100"
               }`}
             >
-              <div className="w-16 h-16 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center">
-                <IconComponent className="w-8 h-8 text-foreground" />
+              <div className="w-16 h-16 rounded-full bg-white/10 border border-cyan-100/20 flex items-center justify-center">
+                <IconComponent className="w-8 h-8 text-cyan-100" />
               </div>
               <div>
-                <p className="text-lg font-medium text-foreground">{activeRecognition.organization}</p>
-                <p className="text-muted-foreground">
+                <p className="text-lg font-medium text-white">{activeRecognition.organization}</p>
+                <p className="text-cyan-100/62">
                   {activeRecognition.initiative}
                 </p>
               </div>
@@ -155,11 +155,11 @@ export function TestimonialsSection() {
           {/* Recognition Image */}
           <div className="lg:col-span-4 flex flex-col justify-center">
             <div
-              className={`relative aspect-[4/3] overflow-hidden border border-primary/10 bg-gradient-to-br from-white to-primary/[0.05] shadow-[0_22px_70px_rgba(15,71,150,0.1)] transition-all duration-300 ${
+              className={`relative aspect-[4/3] overflow-hidden border border-cyan-100/20 bg-gradient-to-br from-white to-cyan-100/80 shadow-[0_28px_90px_rgba(0,0,0,0.28)] transition-all duration-300 ${
                 isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
               }`}
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),transparent_55%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(208,236,255,0.95),transparent_55%)] pointer-events-none" />
               <div className="relative h-full w-full p-6">
                 <Image
                   key={activeRecognition.image}
@@ -186,8 +186,8 @@ export function TestimonialsSection() {
                   }}
                   className={`h-2 transition-all duration-300 ${
                     idx === activeIndex
-                      ? "w-8 bg-foreground"
-                      : "w-2 bg-foreground/20 hover:bg-foreground/40"
+                      ? "w-8 bg-cyan-200"
+                      : "w-2 bg-white/20 hover:bg-white/40"
                   }`}
                 />
               ))}
@@ -198,7 +198,7 @@ export function TestimonialsSection() {
         {/* Note for current slide */}
         {activeRecognition.note && (
           <div
-            className={`mt-12 text-muted-foreground text-sm transition-all duration-300 delay-200 ${
+            className={`mt-12 text-cyan-100/58 text-sm transition-all duration-300 delay-200 ${
               isAnimating ? "opacity-0" : "opacity-100"
             }`}
           >
