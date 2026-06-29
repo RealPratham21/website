@@ -61,7 +61,7 @@ const teamMembers = [
 
 export function TeamSection() {
   return (
-    <section className="relative py-28 lg:py-36 border-t border-foreground/10 overflow-hidden">
+    <section className="relative py-28 lg:py-36 border-t border-primary/10 bg-[linear-gradient(180deg,rgba(241,248,255,0.9)_0%,rgba(255,255,255,0.96)_100%)] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-14 lg:mb-16">
         <div className="flex items-center gap-4 mb-8">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">

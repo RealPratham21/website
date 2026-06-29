@@ -323,7 +323,7 @@ export function FeaturesSection() {
     <section
       id="platform"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 scroll-mt-24 bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(247,249,255,1)_40%,rgba(221,232,255,0.94)_74%,rgba(10,56,130,0.16)_100%)]"
+      className="relative py-24 lg:py-32 scroll-mt-24 bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(236,246,255,0.96)_42%,rgba(214,231,255,0.9)_78%,rgba(47,91,255,0.14)_100%)]"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}

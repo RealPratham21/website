@@ -26,7 +26,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pb-32 bg-white">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pb-32 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(238,247,255,0.9)_68%,rgba(255,255,255,0.96)_100%)]">
       {/* Animated sphere background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-40 pointer-events-none">
         <AnimatedSphere />
@@ -89,12 +89,12 @@ export function HeroSection() {
                     </span>
                     <span 
                       key={wordIndex}
-                      className="absolute inset-0 inline-flex text-sky-700 [text-shadow:0_0_18px_rgba(56,189,248,0.18)]"
+                      className="absolute inset-0 inline-flex text-primary [text-shadow:0_0_22px_rgba(47,91,255,0.22)]"
                     >
                       {words[wordIndex].split("").map((char, i) => (
                         <span
                           key={`${wordIndex}-${i}`}
-                          className="inline-block animate-char-in bg-gradient-to-r from-sky-700 via-cyan-600 to-blue-700 bg-clip-text text-transparent"
+                          className="inline-block animate-char-in bg-gradient-to-r from-primary via-cyan-600 to-blue-700 bg-clip-text text-transparent"
                           style={{
                             animationDelay: `${i * 50}ms`,
                           }}
@@ -118,7 +118,7 @@ export function HeroSection() {
             >
               <Button 
                 size="lg" 
-                className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-14 text-base rounded-full group shadow-[0_16px_40px_rgba(47,91,255,0.22)]"
               >
                 Explore Zord
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -126,7 +126,7 @@ export function HeroSection() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
+                className="h-14 px-8 text-base rounded-full border-primary/25 bg-white/70 hover:bg-primary/5"
               >
                 Request Demo
               </Button>
@@ -137,7 +137,7 @@ export function HeroSection() {
       </div>
       
       {/* White background section for stats */}
-      <div className="w-full bg-white mt-40 lg:mt-52 py-12">
+      <div className="w-full bg-white/70 mt-40 lg:mt-52 py-12 backdrop-blur">
         {/* Stats marquee */}
         <div 
           className={`transition-all duration-700 delay-500 ${

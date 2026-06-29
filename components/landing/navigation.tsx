@@ -2,19 +2,28 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Platform", href: "#platform" },
-  { name: "Zord", href: "#zord" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "About", href: "#about" },
-];
+  { name: "Platform", href: "#platform", type: "section" },
+  { name: "Zord", href: "#zord", type: "section" },
+  { name: "Solutions", href: "#solutions", type: "section" },
+  { name: "About", href: "#about", type: "section" },
+  { name: "Contact", href: "/contact", type: "route" },
+] as const;
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const getHref = (link: typeof navLinks[number]) => {
+    if (link.type === "route") return link.href;
+    return pathname === "/" ? link.href : `/${link.href}`;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +54,7 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <span className={`relative overflow-hidden rounded-md transition-all duration-500 ${isScrolled ? "w-8 h-8" : "w-10 h-10"}`}>
               <Image
                 src="/arealis%20logo.jpg"
@@ -57,29 +66,38 @@ export function Navigation() {
             </span>
             <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>Arealis</span>
             <span className={`text-muted-foreground font-mono transition-all duration-500 ${isScrolled ? "text-[10px] mt-0.5" : "text-xs mt-1"}`}>®</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
+                href={getHref(link)}
+                className={`text-sm transition-colors duration-300 relative group ${
+                  pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-foreground"
+                }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
-              </a>
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 group-hover:w-full ${
+                    pathname === link.href ? "w-full" : "w-0"
+                  }`}
+                />
+              </Link>
             ))}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Button
+              asChild
               size="sm"
-              className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
+              className={`bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
             >
-              Book Demo
+              <Link href="/contact">Book Demo</Link>
             </Button>
           </div>
 
@@ -112,9 +130,9 @@ export function Navigation() {
           {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-center gap-8">
             {navLinks.map((link, i) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                href={getHref(link)}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
                   isMobileMenuOpen 
@@ -124,7 +142,7 @@ export function Navigation() {
                 style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
           
@@ -137,10 +155,11 @@ export function Navigation() {
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
             <Button 
-              className="w-full bg-foreground text-background rounded-full h-14 text-base"
+              asChild
+              className="w-full bg-primary text-primary-foreground rounded-full h-14 text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Book Demo
+              <Link href="/contact">Book Demo</Link>
             </Button>
           </div>
         </div>

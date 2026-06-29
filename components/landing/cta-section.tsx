@@ -31,10 +31,10 @@ export function CtaSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(231,242,255,0.92)_100%)]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
-          className={`relative border border-foreground transition-all duration-1000 ${
+          className={`relative border border-primary/20 bg-white/72 shadow-[0_28px_90px_rgba(15,71,150,0.12)] backdrop-blur transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           onMouseMove={handleMouseMove}
@@ -43,7 +43,7 @@ export function CtaSection() {
           <div 
             className="absolute inset-0 opacity-10 pointer-events-none transition-opacity duration-300"
             style={{
-              background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(0,0,0,0.15), transparent 40%)`
+              background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(47,91,255,0.24), transparent 40%)`
             }}
           />
           
@@ -64,7 +64,7 @@ export function CtaSection() {
                 <div className="flex flex-col sm:flex-row items-start gap-4">
                   <Button
                     size="lg"
-                    className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-14 text-base rounded-full group shadow-[0_16px_40px_rgba(47,91,255,0.22)]"
                   >
                     Book Demo
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -80,8 +80,8 @@ export function CtaSection() {
           </div>
 
           {/* Decorative corner */}
-          <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-foreground/10" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-foreground/10" />
+          <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-primary/10" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-primary/10" />
         </div>
       </div>
     </section>

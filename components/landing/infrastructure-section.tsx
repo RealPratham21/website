@@ -38,7 +38,7 @@ export function InfrastructureSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.95)_0%,rgba(239,247,255,0.88)_100%)]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
@@ -85,11 +85,11 @@ export function InfrastructureSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
-            <div className="border border-foreground/10">
+            <div className="border border-primary/10 bg-white/72 shadow-[0_24px_80px_rgba(15,71,150,0.08)] backdrop-blur">
               {/* Header */}
               <div className="px-6 py-4 border-b border-foreground/10 flex items-center justify-between">
                 <span className="text-sm font-mono text-muted-foreground">Enterprise Connections</span>
-                <span className="flex items-center gap-2 text-xs font-mono text-green-600">
+                <span className="flex items-center gap-2 text-xs font-mono text-emerald-600">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   All Connected
                 </span>
@@ -107,7 +107,7 @@ export function InfrastructureSection() {
                     <div className="flex items-center gap-4">
                       <span 
                         className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                          activeIntegration === index ? "bg-green-500" : "bg-green-500/30"
+                          activeIntegration === index ? "bg-emerald-500" : "bg-emerald-500/30"
                         }`}
                       />
                       <div className="font-medium text-sm">{integration.name}</div>

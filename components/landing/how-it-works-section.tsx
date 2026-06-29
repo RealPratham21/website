@@ -73,7 +73,7 @@ export function HowItWorksSection() {
     <section
       id="zord"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-foreground text-background overflow-hidden scroll-mt-24"
+      className="relative py-24 lg:py-32 bg-[#071426] text-background overflow-hidden scroll-mt-24"
     >
       {/* Diagonal lines pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">

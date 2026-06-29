@@ -81,7 +81,7 @@ export function TestimonialsSection() {
   const IconComponent = activeRecognition.icon;
 
   return (
-    <section id="about" className="relative py-32 lg:py-40 border-t border-foreground/10 lg:pb-14 scroll-mt-24">
+    <section id="about" className="relative py-32 lg:py-40 border-t border-primary/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(241,248,255,0.9)_100%)] lg:pb-14 scroll-mt-24">
       {/* Recognition Partners Label */}
       <div className="mb-20">
         <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
@@ -155,7 +155,7 @@ export function TestimonialsSection() {
           {/* Recognition Image */}
           <div className="lg:col-span-4 flex flex-col justify-center">
             <div
-              className={`relative aspect-[4/3] overflow-hidden border border-foreground/10 bg-gradient-to-br from-white to-foreground/[0.03] transition-all duration-300 ${
+              className={`relative aspect-[4/3] overflow-hidden border border-primary/10 bg-gradient-to-br from-white to-primary/[0.05] shadow-[0_22px_70px_rgba(15,71,150,0.1)] transition-all duration-300 ${
                 isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
               }`}
             >
