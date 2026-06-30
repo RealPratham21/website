@@ -274,10 +274,10 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 lg:py-20 border-b border-primary/20 bg-white/45 px-6 shadow-[0_18px_50px_rgba(15,71,150,0.08)] backdrop-blur transition-colors duration-500 group-hover:bg-white/70 lg:px-8">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 lg:py-20 border border-[#7f8f28]/45 bg-[linear-gradient(135deg,rgba(231,241,198,0.96)_0%,rgba(202,222,139,0.9)_54%,rgba(146,164,53,0.36)_100%)] px-6 shadow-[0_22px_60px_rgba(83,96,28,0.22)] backdrop-blur transition-all duration-500 group-hover:-translate-y-1 group-hover:border-[#68771f]/70 group-hover:shadow-[0_28px_78px_rgba(83,96,28,0.3)] lg:px-8">
         {/* Number */}
         <div className="shrink-0">
-          <span className="font-mono text-sm text-muted-foreground">{feature.number}</span>
+          <span className="font-mono text-sm text-[#56651d]">{feature.number}</span>
         </div>
         
         {/* Content */}
@@ -286,14 +286,14 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
             <h3 className="text-3xl lg:text-4xl font-display mb-4 group-hover:translate-x-2 transition-transform duration-500">
               {feature.title}
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-[#334016]/78 leading-relaxed">
               {feature.description}
             </p>
           </div>
           
           {/* Visual */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-48 h-40 text-foreground">
+            <div className="w-48 h-40 text-[#3f4d17]">
               <AnimatedVisual type={feature.visual} />
             </div>
           </div>
